@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // debugger
+        function isIsogram(str) {
+            let lowerCase=str.toLowerCase();
+            let repeatedLetters = {}
+            for (let i = 0; i < lowerCase.length; i++) {
+                let letter = lowerCase[i];
+                if (repeatedLetters[letter]) {
+                    repeatedLetters[letter]++;
+                } else {
+                    repeatedLetters[letter] = 1;
+
+                }
+
+            }
+            for (let i = 0; i < lowerCase.length; i++) {
+                if (repeatedLetters[lowerCase[i]] > 1) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isIsogram("Dermatoglyphics"));
+        console.log(isIsogram("moose"));
+    </script>
+</body>
+
+</html>
